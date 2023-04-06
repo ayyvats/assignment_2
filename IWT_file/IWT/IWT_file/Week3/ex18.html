@@ -1,0 +1,66 @@
+<!--Create an infinite animation of an element moving in a square pattern.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Excercise18</title>
+        <style>
+            .container{
+    border:solid #B46060 2px;
+    background-color:#4D4D4D;
+    display:flex; 
+    flex-flow:row wrap;
+    width:600px;
+    height:600px;
+    justify-content:space-around;
+    align-items:center;
+}
+.container > div{
+    width:700px;
+    height:700px;
+    margin:10px;
+    display:flex;
+    position:relative;
+}
+.container > div > img {
+    height:40%;
+    width:40%;
+    position:absolute;
+    animation-name:animate1;
+    animation-duration:6s;
+    animation-iteration-count: infinite; 
+    animation-direction:normal;
+    animation-delay:4s;
+}
+/*creating animations*/
+@keyframes animate1{
+    from {
+            left:0;
+            top:0;
+            /*transform:rotate(0deg);*/
+    }
+    25%{
+        top:0;
+        left:460px;
+    }
+    50% {
+            left:460px;
+            top:460px;
+    }
+    75%{
+            left:0;
+            top:460px;
+    }
+    to {
+            left:0;
+            top:0;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container" align="center">
+            <div>
+                <img src="../images/4.jpg" />
+            </div>
+    </body>
+</html>
