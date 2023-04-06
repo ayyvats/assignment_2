@@ -1,0 +1,98 @@
+<!--Create a web page to display events in card layout. An event should have image, 
+title, date and description fields. Store all these values in Javascript array or object 
+for multiple events and generate dynamic cards for each events on webpage.-->
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing:border-box;
+            }
+            .card {
+                    width:30%;
+                    padding:2px;
+                    position:relative;
+                    background-color:#4D455D;
+                    box-shadow:2px 2px 4px #E96479;
+            }
+           
+            .card > img {
+                        width:100%;
+                        height:40%;
+            }
+
+            .desc {
+                padding:10px;
+            }
+            .desc > h2 {
+                color:#7DB9B6;
+                font-size:20px;
+                text-transform:uppercase;
+            }
+            .desc > p {
+                text-align:justify;
+                color:#F5E9CF;
+
+            }
+            .date {
+                background-color:#18122B;
+                width:30%;
+                color:white;
+                font-size:20px;
+                position:absolute;
+                left:20px;
+                top:37%;
+                transform:rotate(-5deg);
+            }
+            #display{
+                font-size:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display:flex;justify-content:space-between">
+        <script>
+            images = ["../images\10.jpg","../images\1.jpg","../images\4.jpg"]
+            titles = ["Annual Function","Workshop","Guest Lecture"]
+            intro = ["This is an event","this is very imprtant event","this is very useful event"]
+            dates = ["23 Nov","10 Dec","22 Feb"]
+
+	        for(i=0;i<3;i++)
+            {
+            var card = "<div class=card >"
+            +"<img src=images/"
+            +images[i]
+            +" >"
+            +"<div class='date'>"
+            + dates[i]
+            +"</div>"
+            +"<div class='desc'>"
+                +"<h2>"
+                    +titles[i]
+                    +"</h2>"
+                +"<p>"+intro[i]+"</p></div></div>"
+
+            document.write(card);
+            }
+        </script>
+    </div> 
+    
+    <div id="display"  onclick="hide()">
+
+    </div>
+    <script>
+	
+        d = new Date();
+		function clock()
+		{
+        hour = d.getHours();
+        cTime = d.getHours() +":"+d.getMinutes()+":"+d.getSeconds()
+        document.getElementById('display').innerHTML = cTime;
+		}
+		setInterval(clock,1000);
+    function hide()
+        {
+            document.getElementById('display').style.display='none';   
+        }
+    </script>
+    </body>
+</html>

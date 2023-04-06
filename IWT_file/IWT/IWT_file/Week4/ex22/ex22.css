@@ -1,0 +1,26 @@
+.container{
+    display:flex;
+}
+.inner{
+    color:#675D50;
+	font-size:40px;
+	width:100px;
+	height:100px;
+	border:solid 1px #ABC4AA;
+	text-align:center;
+	font-weight:800;
+}
+#inner1{
+    background-color:#F3DEBA;
+}
+#inner2{
+    background-color:#A9907E;
+}
+#inner1:hover{
+    background-color:#867070;
+    color:#D5B4B4;
+    }
+#inner2:hover{
+    background-color:#4D4D4D;
+    color:#B46060;
+}
